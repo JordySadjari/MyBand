@@ -1,5 +1,5 @@
 <?php
 
-$result = $mysqli->query("SELECT * FROM bandarticles");
+$result = $mysqli->query("SELECT * FROM animearticles");
 
 convertResultToArray($result);

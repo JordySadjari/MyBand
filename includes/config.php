@@ -11,7 +11,7 @@ setlocale(LC_ALL, 'nl_NL');
 
 // Database settings
 define('DB_HOST','localhost');
-define('DB_NAME','myband');
+define('DB_NAME','peranime');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
 

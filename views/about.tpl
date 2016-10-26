@@ -1,5 +1,5 @@
-<h1>About Linkin Park fanpage</h1>
+<h1 style="margin-left: 20px; font-size: 2.3em;">About AnimeFest</h1>
 
 <div>
-    Deze website is gemaakt omdat de fans dat willen.
+    This site was made for a school project.
 </div>

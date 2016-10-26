@@ -12,14 +12,13 @@ include 'includes/database.php';
 include 'includes/functie.php';
 
 // Assign value of page title to the smarty variable 'title', usually the value comes from a database
-$templateParser->assign('title', 'Me First And The Gimme Gimmes');
+$templateParser->assign('title', 'PerAnime');
 
 // Display template: output html
 $templateParser->display('head.tpl');
 
 $headerText = 'This is the header';
 
-$templateParser->assign('headerString', $headerText);
 $templateParser->display('header.tpl');
 
 
@@ -30,10 +29,7 @@ $templateParser->display('header.tpl');
 /*$templateParser->assign('result',$result);
 $templateParser->display('newsarticles.tpl');
 */
-$footerText = 'Footer made by me for school';
 
-$templateParser->assign('footerString', $footerText);
-$templateParser->display('footer.tpl');
 
 $action = isset($_GET['action'])?$_GET['action']:'home';
 
@@ -47,4 +43,18 @@ switch ($action) {
   case 'about':
     $templateParser->display('about.tpl');
     break;
+
+  case 'charts':
+      $templateParser->display('charts.tpl');
+      break;
+
+  case 'home':
+      $templateParser->display('home.tpl');
+      break;
+
 }
+
+$footerText = 'website owned and © by Perz inc';
+
+$templateParser->assign('footerString', $footerText);
+$templateParser->display('footer.tpl');
