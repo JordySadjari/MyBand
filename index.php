@@ -12,27 +12,62 @@ include 'includes/database.php';
 include 'includes/functie.php';
 
 // Assign value of page title to the smarty variable 'title', usually the value comes from a database
-$templateParser->assign('title', 'Me First And The Gimme Gimmes');
+$templateParser->assign('title', 'PerAnime');
 
 // Display template: output html
 $templateParser->display('head.tpl');
 
 $headerText = 'This is the header';
 
+<<<<<<< HEAD
 $templateParser->assign('headerString', $headerText);
+=======
+>>>>>>> origin/master
 $templateParser->display('header.tpl');
 
 
 // Get newsarticles from database
-include('model/select_newsarticles.php');
+
 
 // Show newsarticles 'old style' => refactor to template system.
+<<<<<<< HEAD
 $templateParser->assign('result',$result);
 $templateParser->display('newsarticles.tpl');
 
 var_dump($result);
 
 $footerText = 'made by me for school';
+=======
+/*$templateParser->assign('result',$result);
+$templateParser->display('newsarticles.tpl');
+*/
+
+
+$action = isset($_GET['action'])?$_GET['action']:'home';
+
+switch ($action) {
+  case 'news':
+  include('model/select_newsarticles.php');
+  $templateParser->assign('result',$result);
+  $templateParser->display('newsarticles.tpl');
+    break;
+
+  case 'about':
+    $templateParser->display('about.tpl');
+    break;
+
+  case 'charts':
+      $templateParser->display('charts.tpl');
+      break;
+
+  case 'home':
+      $templateParser->display('home.tpl');
+      break;
+
+}
+
+$footerText = 'website owned and © by Perz inc';
+>>>>>>> origin/master
 
 $templateParser->assign('footerString', $footerText);
 $templateParser->display('footer.tpl');
